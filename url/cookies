@@ -1,0 +1,16 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".www.cbc.ca"
+  [url-cookie "ak_bmsc" "92CD0AD53F5BDF07C4D6352D6D28549C172403466F360000239AAA602C0BDB7F~plx0C0BwUm6I/j2jEjkseEE97TE1OglwSM4DYiDmtd74vgSkia6NkQO2dlgJVVFzKx4T5scJzjOCMjDkmVdXjEGxZFl9R6JSmKJ32fnOhP/Cj7Xr+zvqWezGWnNaEhVzuTXOvgxeaPepphZ+zyswDnyDIZ0jq1rgg29S0lgqnlsAQSAf3s0+hGyc0WYyg8m7NaR5wia00nUu1bmKh/Bj/Djas6F5ZDbGeB27/nmm9YiVZcPKvkuFtHG4bfyQAfLFMhYP8af2nyRW+n7sJSYEXCPGFya9l+ZaJw3pKuI+wLIf59Z7rcqynm1gVzCROcEhxX" "Sun May 23 20:08:35 2021 GMT" "/" ".www.cbc.ca" nil]
+  [url-cookie "bm_mi" "29BF593F4B6A058895FEFA1E9ABA3688~7JaM6TBlOnhcaJb7J0I0lpWxG6pXYd33PnXkZxCMDYA6H0G/NfNIvCjHOmQK79tPBO3l2gsYsmS+NE/bgZ05W+aGuM/wPaO+NN3ducwMEGxaw9NZIkpOOGFKsvh+RZIWDGxZvT2fI936oH+xf/ZSH2XvkIdhubn+vsYZ7NEBHkDTG+WefMRZuXCHKwwLdJ5w7v1vTbGyWkCCnN2yn0BnXLOixd/vG4+xfgK9hWuY3w4=" "Sun May 23 20:08:35 2021 GMT" "/" ".www.cbc.ca" nil]
+  [url-cookie "bm_sv" "B02591532D5932439AD05E12AAD18678~jBHtT1/Dy0kqNXPuI5Vo+GIh1kGGDjC+1/TOSOCD/hvzSobjjUfCZbZyxTHZzwSxWM9oFdeYsFiR91SGOuKwAG3Qk+HdJmg2JIftYNff7KHgo1YEaVjYhUqYmt86gZxV+k0m9g7epzS1vQf7ApofrVPXq61FF+N9NBPgGoN9n74=" "Sun May 23 20:08:36 2021 GMT" "/" ".www.cbc.ca" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

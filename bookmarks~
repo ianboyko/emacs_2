@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Sync"
+ (filename . "~/Sync/")
+ (front-context-string . "Learning\n  -rw-r")
+ (rear-context-string . "96 May 25 17:14 ")
+ (position . 359))
+)

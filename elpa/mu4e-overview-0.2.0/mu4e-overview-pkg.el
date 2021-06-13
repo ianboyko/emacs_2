@@ -1,0 +1,2 @@
+;;; Generated package description from mu4e-overview.el  -*- no-byte-compile: t -*-
+(define-package "mu4e-overview" "0.2.0" "Show overview of maildir" '((emacs "26")) :commit "467a7dfda4e534783469a137545193ded8a66723" :authors '(("Michał Krzywkowski" . "k.michal@zoho.com")) :maintainer '("Michał Krzywkowski" . "k.michal@zoho.com") :keywords '("mail" "tools") :url "https://github.com/mkcms/mu4e-overview")
