@@ -18,8 +18,6 @@
 (set-fringe-mode 10)        ; Give some breathing room
 ;;(menu-bar-mode -1)            ; Disable the menu bar
 (scroll-bar-mode -1)      ; Disable visible scrollbar 
-(display-time)
-
 (transient-mark-mode 1)
 
 ;;DISABLE BELL FUNCTION
@@ -57,7 +55,7 @@
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes '(deeper-blue))
  '(custom-safe-themes t)
- '(display-time-mode t)
+ ;; '(display-time-mode t)
  '(global-display-line-numbers-mode t)
  '(helm-mode t)
  '(inhibit-startup-screen t)
@@ -106,6 +104,9 @@
   (indent-according-to-mode))
 (global-set-key [(meta shift up)]  'move-line-up)
 (global-set-key [(meta shift down)]  'move-line-down)
+
+;; new keybind for <f12>
+(global-set-key [(f12)] 'flyspell-correct-word-before-point)
 
 
   ;; Replace list hyphen with dot
