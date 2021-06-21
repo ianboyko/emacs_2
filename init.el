@@ -6,6 +6,9 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized t) ; full screen on start
+;;org-roam stuff
+(add-to-list 'load-path "~/Sync/org/personal")
+(require 'org-roam)
 
 (setq initial-scratch-message nil)
 
@@ -55,17 +58,15 @@
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes '(deeper-blue))
  '(custom-safe-themes t)
- ;; '(display-time-mode t)
  '(global-display-line-numbers-mode t)
  '(helm-mode t)
  '(inhibit-startup-screen t)
  '(org-bullets-bullet-list '("◉" "○" ">" "-"))
  '(org-export-backends '(ascii html icalendar latex md odt org))
  '(org-hide-emphasis-markers t)
- '(org-odd-levels-only t)
  '(org-support-shift-select 'always)
  '(package-selected-packages
-   '(ox-epub nov org-superstar org-bullets hippie-expand-slime mu4e-overview ox-hugo ham-mode hackernews emmet-mode markdown-mode yasnippet org-edna))
+   '(org-roam helpful ox-epub nov org-superstar org-bullets hippie-expand-slime mu4e-overview ox-hugo ham-mode hackernews emmet-mode markdown-mode yasnippet org-edna))
  '(split-window-horizontally t)
  '(word-wrap t))
 (custom-set-faces
@@ -109,7 +110,7 @@
 (global-set-key [(f12)] 'flyspell-correct-word-before-point)
 
 
-  ;; Replace list hyphen with dot
+;; Replace list hyphen with dot
  (font-lock-add-keywords 'org-mode
                           '(("^ *\\([-]\\) "
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
