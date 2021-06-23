@@ -28,4 +28,6 @@
   (visual-fill-column-mode 1))
 
 (use-package visual-fill-column
-  :hook (org-mode . org-mode-visual-fill))
+	     :hook (org-mode . org-mode-visual-fill))
+
+;; testing git ssh
