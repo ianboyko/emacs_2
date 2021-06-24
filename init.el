@@ -26,9 +26,9 @@
 ;;DISABLE BELL FUNCTION
 (setq ring-bell-function 'ignore)
 
-; Org-mode stop indentation
-; disable indentation **WAIT I LIKE INDENTS**
-; (setq org-adapt-indentation nil)
+;; Org-mode stop indentation
+;; disable indentation
+(setq org-adapt-indentation nil)
 
 ;;UNFILL DAMNIT!
 (defun unfill-region (begin end)
@@ -59,7 +59,7 @@
  '(custom-enabled-themes '(deeper-blue))
  '(custom-safe-themes t)
  '(global-display-line-numbers-mode t)
- '(helm-mode t)
+;; '(helm-mode t) disable helm mode for now. causes janky help results
  '(inhibit-startup-screen t)
  '(org-bullets-bullet-list '("◉" "○" ">" "-"))
  '(org-export-backends '(ascii html icalendar latex md odt org))
@@ -109,6 +109,8 @@
 ;; new keybind for <f12>
 (global-set-key [(f12)] 'flyspell-correct-word-before-point)
 
+;;new keybind for C-`
+;;(global-set-key [(control `)] 'other-window)
 
 ;; Replace list hyphen with dot
  (font-lock-add-keywords 'org-mode
