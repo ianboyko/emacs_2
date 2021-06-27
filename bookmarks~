@@ -2,7 +2,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Sync"
+(("org-capture-last-stored"
+ (filename . "~/Sync/org/personal/inbox.org")
+ (front-context-string . "*** TODO Finish ")
+ (rear-context-string . "ng][Exporting]]\n")
+ (position . 433))
+("b"
+ (filename . "~/Sync/Learning/Emacs_commands-org.org")
+ (front-context-string . "C-s, C-r\nM-x occ")
+ (rear-context-string . "ers\n\n*** Search\n")
+ (position . 477))
+("a"
+ (filename . "~/Sync/Learning/Emacs_commands-org.org")
+ (front-context-string . "C-s, C-r\nM-x occ")
+ (rear-context-string . "ers\n\n*** Search\n")
+ (position . 477))
+("Emacs_commands-org.org"
+ (filename . "~/Sync/Learning/Emacs_commands-org.org")
+ (front-context-string . "C-a, C-e Point t")
+ (rear-context-string . "ation\n\n*** Text\n")
+ (position . 161))
+("Sync"
  (filename . "~/Sync/")
  (front-context-string . "Learning\n  -rw-r")
  (rear-context-string . "96 May 25 17:14 ")
