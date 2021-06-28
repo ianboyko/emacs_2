@@ -57,8 +57,8 @@
  '(custom-safe-themes t)
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
- '(org-agenda-files '("~/Sync/org/personal/inbox.org"))
- '(org-archive-location "~/Sync/org/personal/archive.org::* From %s")
+ '(org-agenda-files '("~/Sync/org/inbox.org"))
+ '(org-archive-location "~/Sync/org/archive.org::* From %s")
  '(org-bullets-bullet-list '("◉" "○" ">" "-"))
  '(org-export-backends '(ascii html icalendar latex md odt org))
  '(org-hide-emphasis-markers t)
@@ -73,15 +73,25 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#181a26" :foreground "gray80" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 155 :width normal :foundry "GOOG" :family "Noto Sans"))))
+ '(font-lock-keyword-face ((t (:foreground "DeepSkyBlue1" :height 0.75))))
  '(helm-selection ((t (:extend t :background "khaki1" :distant-foreground "black"))))
  '(line-number ((t (:inherit (shadow default) :foreground "dim gray"))))
  '(linum ((t (:inherit (shadow default) :foreground "DodgerBlue4" :foundry "GOOG" :family ""))))
  '(mode-line ((t (:background "gray12" :foreground "gray" :box (:line-width 1 :style released-button)))))
  '(mode-line-buffer-id ((t (:foreground "gray" :weight bold))))
+ '(org-agenda-date-weekend ((t (:inherit org-agenda-date :weight normal))))
+ '(org-agenda-done ((t (:foreground "dim gray"))))
  '(org-code ((t (:inherit shadow :family "Andale Mono"))))
- '(org-level-1 ((t (:inherit outline-1 :extend nil :weight bold :height 1.5))))
- '(org-level-2 ((t (:inherit outline-2 :extend nil :weight normal :height 1.35))))
- '(org-level-3 ((t (:inherit outline-3 :extend nil :weight normal :height 1.1)))))
+ '(org-date ((t (:foreground "DeepSkyBlue1"))))
+ '(org-done ((t (:foreground "dim gray" :weight bold))))
+ '(org-level-1 ((t (:inherit outline-1 :extend nil :weight bold :height 1.25))))
+ '(org-level-2 ((t (:inherit outline-2 :extend nil :weight normal :height 1.25))))
+ '(org-level-3 ((t (:inherit outline-3 :extend nil :weight normal :height 1.1))))
+ '(org-scheduled ((t (:foreground "dark gray"))))
+ '(org-scheduled-previously ((t (:foreground "light gray"))))
+ '(org-scheduled-today ((t (:foreground "light gray"))))
+ '(org-tag ((t (:weight normal :height 0.8 :width condensed))))
+ '(org-upcoming-deadline ((t (:foreground "light gray")))))
 
 (global-visual-line-mode t)
 
@@ -107,6 +117,10 @@
 
 ;; new keybind for <f12>
 (global-set-key [(f12)] 'flyspell-correct-word-before-point)
+
+;; new keybind for M-a
+(global-set-key (kbd "M-a") #'org-agenda)
+(global-set-key (kbd "M-c") #'org-capture)
 
 ;;new keybind for C-;
 (global-set-key (kbd "C-;") #'other-window)
@@ -141,9 +155,10 @@
 (setq org-M-RET-may-split-line '((item . nil)))
 
 ;; Org mode target for capture
-(setq org-default-notes-file (concat org-directory "~/Sync/org/personal/inbox.org"))
+(setq org-default-notes-file (concat org-directory "~/Sync/org/inbox.org"))
 
 ;; Org mode sample capture template
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Sync/org/personal/inbox.org" "Inbox")
+      '(("t" "Todo" entry (file+headline "~/Sync/org/inbox.org" "Inbox")
          "* TODO %?\n  %i\n  %a")))
+(setq org-agenda-files '("~/Sync/org"))

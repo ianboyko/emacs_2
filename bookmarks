@@ -3,10 +3,10 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/Sync/org/personal/inbox.org")
- (front-context-string . "*** TODO Test ou")
- (rear-context-string . "ting][Editing]]\n")
- (position . 537))
+ (filename . "~/Sync/org/inbox.org")
+ (front-context-string . "** TODO Update e")
+ (rear-context-string . "2021-06-29 Tue>\n")
+ (position . 963))
 ("b"
  (filename . "~/Sync/Learning/Emacs_commands-org.org")
  (front-context-string . "C-s, C-r\nM-x occ")
