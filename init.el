@@ -154,10 +154,10 @@
 ;; Org mode new item doesn't split header
 (setq org-M-RET-may-split-line '((item . nil)))
 
-;; Org mode target for capture
+;; Org mode target for capture ######Different for mac######
 (setq org-default-notes-file (concat org-directory "~/Sync/org/inbox.org"))
 
-;; Org mode sample capture template
+;; Org mode sample capture template ######Different for mac######
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Sync/org/inbox.org" "Inbox")
          "* TODO %?\n  %i\n  %a")))
