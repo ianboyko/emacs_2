@@ -149,7 +149,7 @@
 ;(global-smart-tab-mode 1) ;;I get an error
 
 (setq org-todo-keywords
-      '((sequence "TODO" "WAITING" "CANCELLED" "DONE")))
+      '((sequence "TODO" "WAITING" "DONE")))
 
 ;; Org mode new item doesn't split header
 (setq org-M-RET-may-split-line '((item . nil)))
