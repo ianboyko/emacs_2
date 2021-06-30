@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/Sync/org/inbox.org")
- (front-context-string . "** TODO Update e")
- (rear-context-string . "2021-06-29 Tue>\n")
- (position . 963))
+ (front-context-string . "** TODO Book Lon")
+ (rear-context-string . "06-30 Wed 8:45>\n")
+ (position . 1556))
 ("b"
  (filename . "~/Sync/Learning/Emacs_commands-org.org")
  (front-context-string . "C-s, C-r\nM-x occ")

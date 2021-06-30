@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/Sync/org/inbox.org")
- (front-context-string . "** TODO India fa")
- (rear-context-string . "eaders\n\n* Inbox\n")
- (position . 233))
+ (front-context-string . "** TODO Buy Iris")
+ (rear-context-string . "06-30 Wed 8:30>\n")
+ (position . 1411))
 ("b"
  (filename . "~/Sync/Learning/Emacs_commands-org.org")
  (front-context-string . "C-s, C-r\nM-x occ")
