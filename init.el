@@ -99,7 +99,7 @@
  '(org-drawer ((t (:foreground "LightSkyBlue" :height 0.75))))
  '(org-headline-done ((t (:foreground "dim gray"))))
  '(org-level-1 ((t (:inherit outline-1 :extend nil :weight bold :height 1.25))))
- '(org-level-2 ((t (:inherit outline-2 :extend nil :weight normal :height 1.25))))
+ '(org-level-2 ((t (:inherit outline-2 :extend nil :weight normal :height 1.15))))
  '(org-level-3 ((t (:inherit outline-3 :extend nil :weight normal :height 1.1))))
  '(org-scheduled ((t (:foreground "dark gray"))))
  '(org-scheduled-previously ((t (:foreground "light gray"))))
