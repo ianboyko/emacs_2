@@ -139,8 +139,8 @@
 (global-set-key (kbd "M-c") #'org-capture)
 
 ;;new keybind for C-; **another bullshit command that breaks in org-mode 
-(global-set-key (kbd "C-;") #'other-window)
-(global-set-key (kbd "C-,") #'prev-window)
+;;(global-set-key (kbd "C-;") #'other-window)
+;;(global-set-key (kbd "C-,") #'prev-window)
 
 (defun prev-window ()
   (interactive)
@@ -157,11 +157,12 @@
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
 ;;pabbrev mode  **what's the point of this bullshit if TAB won't complete in org-mode
-;(require 'pabbrev)
-;(defun my-org-mode-settings ()
-;   (pabbrev-mode))
-;(add-hook 'org-mode-hook 'my-org-mode-settings)
-;(global-pabbrev-mode)
+(require 'pabbrev)
+(defun my-org-mode-settings ()
+   (pabbrev-mode))
+(add-hook 'org-mode-hook 'my-org-mode-settings)
+(define-key pabbrev-mode-map [tab] 'pabbrev-expand-maybe) ;;fixes tab problem
+(global-pabbrev-mode)
 ;(global-smart-tab-mode 1) ;;***another bullshit command that doesn't work
 
 (setq org-todo-keywords
@@ -193,3 +194,34 @@
 
 ;; Use 'a' to select file and close Dired buffer 
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Global override for C-; --seems to only work with add-on below
+(defvar my-keys-minor-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "C-;") 'other-window)
+    map)
+  "my-keys-minor-mode keymap.")
+
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  :init-value t
+  :lighter " my-keys")
+
+(my-keys-minor-mode 1)
+
+(defun my-minibuffer-setup-hook ()
+  (my-keys-minor-mode 0))
+
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+;; recommended add on to above minor mode
+(add-hook 'after-load-functions 'my-keys-have-priority)
+
+(defun my-keys-have-priority (_file)
+  "Try to ensure that my keybindings retain priority over other minor modes.
+
+Called via the `after-load-functions' special hook."
+  (unless (eq (caar minor-mode-map-alist) 'my-keys-minor-mode)
+    (let ((mykeys (assq 'my-keys-minor-mode minor-mode-map-alist)))
+      (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
+      (add-to-list 'minor-mode-map-alist mykeys))))
