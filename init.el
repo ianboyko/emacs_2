@@ -3,6 +3,18 @@
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
+;;startup dashboard
+(use-package dashboard
+  :ensure t
+  :diminish dashboard-mode
+  :config
+  (setq dashboard-banner-logo-title "Hazel Jade!")
+  (setq dashboard-startup-banner "~/Sync/hazel_sketch-1.png")
+  (setq dashboard-items '((recents . 10)
+			  (agenda . 10)))
+  (dashboard-setup-startup-hook))
+(setq dashboard-set-navigator t)
+
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 (add-hook 'window-setup-hook 'toggle-frame-maximized t) ; full screen on start
@@ -55,6 +67,7 @@
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes '(deeper-blue))
  '(custom-safe-themes t)
+ '(default-justification 'full)
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(org-agenda-custom-commands
@@ -66,13 +79,13 @@
       ((tags-todo "urgent"
 		  ((org-agenda-overriding-header "Urgent things to do"))))
       nil nil)))
- '(org-archive-location "~/Sync/org/archive.org::* From %s") ;;####Different for mac###
+ '(org-archive-location "~/Sync/org/archive.org::* From %s")
  '(org-export-backends '(ascii html icalendar latex md odt org))
  '(org-hide-emphasis-markers t)
  '(org-log-into-drawer t)
  '(org-support-shift-select 'always)
  '(package-selected-packages
-   '(browse-kill-ring pabbrev org-roam helpful ox-epub nov org-superstar org-bullets hippie-expand-slime mu4e-overview ox-hugo ham-mode hackernews emmet-mode markdown-mode yasnippet org-edna))
+   '(dashboard counsel ivy browse-kill-ring pabbrev org-roam helpful ox-epub nov org-superstar org-bullets hippie-expand-slime mu4e-overview ox-hugo ham-mode hackernews emmet-mode markdown-mode yasnippet org-edna))
  '(split-window-horizontally t)
  '(word-wrap t))
 (custom-set-faces
@@ -98,7 +111,7 @@
  '(org-done ((t (:foreground "dim gray" :weight bold))))
  '(org-drawer ((t (:foreground "LightSkyBlue" :height 0.75))))
  '(org-headline-done ((t (:foreground "dim gray"))))
- '(org-level-1 ((t (:inherit outline-1 :extend nil :weight bold :height 1.25))))
+ '(org-level-1 ((t (:inherit outline-1 :extend nil :weight bold :height 1.2))))
  '(org-level-2 ((t (:inherit outline-2 :extend nil :weight normal :height 1.15))))
  '(org-level-3 ((t (:inherit outline-3 :extend nil :weight normal :height 1.1))))
  '(org-scheduled ((t (:foreground "dark gray"))))
@@ -107,7 +120,9 @@
  '(org-tag ((t (:weight normal :height 0.8 :width condensed))))
  '(org-time-grid ((t (:foreground "light gray"))))
  '(org-todo ((t (:foreground "light gray" :weight bold))))
- '(org-upcoming-deadline ((t (:foreground "light gray")))))
+ '(org-upcoming-deadline ((t (:foreground "light gray"))))
+ '(outline-1 ((t (:foreground "goldenrod1"))))
+ '(outline-2 ((t (:foreground "light goldenrod")))))
 
 (global-visual-line-mode t)
 
@@ -225,3 +240,31 @@ Called via the `after-load-functions' special hook."
     (let ((mykeys (assq 'my-keys-minor-mode minor-mode-map-alist)))
       (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
       (add-to-list 'minor-mode-map-alist mykeys))))
+
+;; org-bullets start on boot (lamda not necessary in Linux because it works on mac?)
+(require 'org-bullets)
+(add-hook 'org-mode-hook 'org-bullets-mode)
+
+;; org-refile to other files too
+(setq org-refile-targets '(
+			   (nil :maxlevel . 1)
+			   (org-agenda-files :maxlevel . 1)
+			   ))
+
+;; org-mode starts with headings in folded state
+(setq org-startup-folded t)
+
+;; org-mode hide tasks in agenda if DONE
+(setq org-agenda-skip-deadline-if-done t)
+(setq org-agenda-skip-scheduled-if-done t)
+
+;; alternative to dashboard I want to try
+;;(recentf-mode 1)
+;;(setq recentf-max-menu-items 25)
+;;
+;;(use-package init-open-recentf
+;;:config
+;;(init-open-recentf)
+
+;; hippie expand re-bind
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
